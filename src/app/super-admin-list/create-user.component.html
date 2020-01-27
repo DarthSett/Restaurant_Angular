@@ -1,0 +1,23 @@
+<form>
+  <mat-form-field>
+    <input matInput
+           placeholder="Name"
+           [(ngModel)]="data.Name"
+            name="Name">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput
+           placeholder="Pass"
+           type="password"
+           [(ngModel)]="data.Pass"
+            name="Pass">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput
+           placeholder="Email"
+           [(ngModel)]="data.Email"
+            name="Email">
+  </mat-form-field>
+  <button class="mat-raised-button mat-primary" [mat-dialog-close]="data">Save</button>
+
+</form>

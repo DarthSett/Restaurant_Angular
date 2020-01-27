@@ -1,0 +1,18 @@
+<form>
+  <mat-form-field class="form-group">
+    <input matInput placeholder="Name" class="form-control" name= "Name" value="data.Name" [(ngModel)]="data.Name">
+  </mat-form-field>
+  <mat-form-field class="form-group">
+    <input matInput placeholder="Tables" class="form-control" name= "Tables" value="data.Tables" [(ngModel)]="data.Tables">
+  </mat-form-field>
+  <mat-form-field class="form-group">
+    <input matInput placeholder="Latitude" class="form-control" name= "Lat" value="data.Lat" [(ngModel)]="data.Lat" >
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Longitude" class="form-control" name="Long" value="data.Long" [(ngModel)]="data.Long" >
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Owner" class="form-control" name="Owner" value="data.Owner" [(ngModel)]="data.Owner">
+  </mat-form-field>
+  <button mat-button [mat-dialog-close]="data">Ok</button>
+</form>

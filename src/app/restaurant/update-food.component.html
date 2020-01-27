@@ -1,0 +1,9 @@
+<form>
+  <mat-form-field class="form-group">
+    <input matInput placeholder="Name" class="form-control" name= "Name" value="data.Name" [(ngModel)]="data.Name">
+  </mat-form-field>
+  <mat-form-field class="form-group">
+    <input matInput placeholder="Price" class="form-control" name= "Price" value="data.Tables" [(ngModel)]="data.Price">
+  </mat-form-field>
+  <button mat-button [mat-dialog-close]="data">Ok</button>
+</form>
