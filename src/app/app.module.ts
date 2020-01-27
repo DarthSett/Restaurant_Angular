@@ -33,7 +33,6 @@ import {
   UpdateFoodComponent,
   UpdateRestaurantComponent
 } from './restaurant/restaurant.component';
-import {AgmCoreModule, MapsAPILoader} from '@agm/core';
 import { TestComponent } from './test/test.component';
 import {CreateUserComponent, DeleteUserComponent, SuperAdminListComponent} from './super-admin-list/super-admin-list.component';
 import { SuperAdminComponent } from './super-admin/super-admin.component';
@@ -89,9 +88,6 @@ import { OwnerComponent } from './owner/owner.component';
     MatTableModule,
     MatTabsModule,
     MatTooltipModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDFiiAKvKjV8FMb-6hKlg6ZN5zx9ne6h_M'
-    }),
     MatCheckboxModule
   ],
   entryComponents: [UpdateRestaurantComponent, DeleteRestaurantComponent, UpdateFoodComponent, CreateUserComponent, DeleteUserComponent],
