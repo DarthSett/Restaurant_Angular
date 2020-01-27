@@ -1,0 +1,27 @@
+/*.container h3 {*/
+/*  margin-top: 5%;*/
+/*  background-color: #5b5b63;*/
+/*  color: #333333;*/
+/*  cursor: pointer;*/
+/*  padding: 10px;*/
+/*}*/
+/*.container h3:hover{*/
+/*  color: #ffffff;*/
+/*  background-color: #222222;*/
+/*}*/
+
+/*.container h3.active{*/
+/*  color: #ffffff;*/
+/*}*/
+
+a.mat-tab-link.ng-star-inserted {
+  width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+
+
+

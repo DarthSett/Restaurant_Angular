@@ -1,0 +1,14 @@
+<mat-card>
+  <mat-card-title>Admin Detail</mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <div class="admin-details">
+      <p>Id: {{ad.ID}}</p>
+      <p>Name: {{ad.Name}}</p>
+      <p>Email: {{ad.Email}}</p>
+      <button mat-raised-button color="primary" (click)="updateAd()" *ngIf="(rank == 2) || (rank == 1 && ad.ID == id)">Edit</button>
+      <button mat-raised-button color="warn" (click)="delAd()" *ngIf="(rank == 2) || (rank == 1 && ad.ID == id)">Delete</button>
+    </div>
+  </mat-card-content>
+  <!--      <mat-divider></mat-divider>-->
+</mat-card>

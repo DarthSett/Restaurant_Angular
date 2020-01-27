@@ -1,0 +1,20 @@
+<div class="list-container">
+<!--  <h3></h3>-->
+  <mat-card>
+    <mat-card-title>Super Admin List</mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <mat-nav-list>
+        <a mat-list-item *ngFor="let superadmin of superadmins" [routerLink]="['/superadmin/' + superadmin.ID]" [routerLinkActive]="['is-active']" [disableRipple]="false">
+          <span matLine>{{superadmins.indexOf(superadmin) + 1}}. {{superadmin.Name}}</span>
+          <span matLine class="email">{{superadmin.Email}}</span>
+          <button mat-icon-button (click)="delSA($event, superadmins.indexOf(superadmin))">
+            <mat-icon matTooltip="Delete">delete</mat-icon>
+          </button>
+        </a>
+      </mat-nav-list>
+    </mat-card-content>
+    <!--      <mat-divider></mat-divider>-->
+  </mat-card>
+  <div class="add"><button mat-fab color="primary" (click)="createSA()"><mat-icon matTooltip="Add a SuperAdmin">add</mat-icon></button></div>
+</div>

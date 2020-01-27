@@ -1,0 +1,29 @@
+<div class="banner-container">
+  <nav mat-tab-nav-bar [backgroundColor]="background">
+    <a mat-tab-link *ngFor="let link of links"
+       (click)="toggle(link)"
+       [active]="activeLink == link"> {{link}} </a>
+    <a mat-tab-nav-bar class="logout-button" id="logout">
+        <button mat-icon-button (click)="Logout()">
+          <mat-icon matTooltip="Log-Out">
+            power_settings_new
+          </mat-icon>
+        </button>
+    </a>
+  </nav>
+
+
+
+<!--  <mat-tab-group class="logout" [backgroundColor]="background">-->
+<!--    <mat-tab disabled class="logout-button">-->
+<!--      <ng-template mat-tab-label>-->
+<!--        <button mat-icon-button (click)="Logout()">-->
+<!--          <mat-icon matTooltip="Log-Out">-->
+<!--            power_settings_new-->
+<!--          </mat-icon>-->
+<!--        </button>-->
+<!--      </ng-template>-->
+<!--    </mat-tab>-->
+<!--  </mat-tab-group>-->
+
+</div>

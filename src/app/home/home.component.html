@@ -1,0 +1,16 @@
+<nav mat-tab-nav-bar [backgroundColor]="background">
+  <a mat-tab-link *ngFor="let link of links"
+     (click)="toggle(link)"
+     [active]="activeLink == link"> {{link}} </a>
+
+<!--     [active]="activeLink == link"> {{link}} </a>-->
+  <!--  <h3 id= "login" (click)="toggle('login')">Login</h3>-->
+  <!--  <h3 id= "signup"(click)="toggle('signup')">Register</h3>-->
+</nav>
+
+<div *ngIf="this.state === 'Login'">
+  <app-login ></app-login>
+</div>
+<!--<div *ngIf="this.state === 'Signup'">-->
+<!--  <app-signup ></app-signup>-->
+<!--</div>-->

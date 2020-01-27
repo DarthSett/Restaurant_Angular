@@ -1,0 +1,26 @@
+<div class="container">
+  <form>
+    <mat-form-field class="form-group">
+      <input matInput placeholder="Name" class="form-control" [(ngModel)]="customer.name" [formControl]="nameFormControl" [errorStateMatcher]="matcher">
+      <mat-error *ngIf="nameFormControl.hasError('required')">
+        Name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-group">
+      <input matInput placeholder="Email" class="form-control" [(ngModel)]="customer.email" [formControl]="emailFormControl" [errorStateMatcher]="matcher">
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-group">
+      <input matInput placeholder="Password" type="password" class="form-control" id="pass" [(ngModel)]="customer.pass" [formControl]="passFormControl" [errorStateMatcher]="matcher">
+      <mat-error *ngIf="passFormControl.hasError('required')">
+        Password is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <button mat-button type="submit" id="btn-submit" (click)="show()">Register</button>
+  </form>
+</div>

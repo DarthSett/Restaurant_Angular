@@ -1,0 +1,30 @@
+<mat-card>
+  <mat-card-title>Owner Details</mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <div class="owner-details">
+      <p>Id: {{owner.ID}}</p>
+      <p>Name: {{owner.Name}}</p>
+      <p>Email: {{owner.Email}}</p>
+      <button mat-raised-button color="primary" (click)="updateOwner()" *ngIf="(rank == 2) || (rank == owner.AdderRole && id == owner.Adder)">Edit</button>
+      <button mat-raised-button color="warn" (click)="delOwner()" *ngIf="(rank == 2) || (rank == owner.AdderRole && id == owner.Adder)">Delete</button>
+    </div>
+  </mat-card-content>
+  <!--      <mat-divider></mat-divider>-->
+</mat-card>
+
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Restaurants Owned
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <mat-nav-list>
+    <a mat-list-item *ngFor="let rest of rests" [routerLink]="['/rest/' + rest.ID]" [routerLinkActive]="['is-active']" [disableRipple]="false">
+      <span matLine>{{rests.indexOf(rest) + 1}}. {{rest.Name}}</span>
+      <button mat-icon-button (click)="delRest($event, rest)" *ngIf="(rank == 2) || (rank == owner.AdderRole && id == owner.Adder)">
+        <mat-icon matTooltip="Delete">delete</mat-icon>
+      </button>
+    </a>
+  </mat-nav-list>
+</mat-expansion-panel>

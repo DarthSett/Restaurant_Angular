@@ -1,0 +1,26 @@
+<div class="container">
+
+  <form>
+    <mat-form-field class="form-group">
+      <input matInput placeholder="Email" class="form-control" [(ngModel)]="loginDetails.email" [formControl]="emailFormControl" [errorStateMatcher]="matcher">
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-group">
+      <input matInput placeholder="Password" type="password" class="form-control" id="pass" [(ngModel)]="loginDetails.pass" [formControl]="passFormControl" [errorStateMatcher]="matcher">
+      <mat-error *ngIf="passFormControl.hasError('required')">
+        Password is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-group">
+      <mat-select placeholder="Select" class="form-control" id="role" required [(ngModel)]="loginDetails.role" name="role">
+        <mat-option *ngFor="let role of roles" [value] ="role">{{role}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  <button mat-button type="submit" id="btn-login" (click)="show()">Login</button>
+  </form>
+</div>

@@ -1,0 +1,31 @@
+mat-icon:hover {
+  color: #ffffff;
+}
+
+mat-icon {
+  color: #aaaaaa;
+}
+.banner-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+nav.mat-tab-nav-bar.mat-tab-header.mat-background-primary.mat-primary {
+  width: 100%;
+}
+.logout-button {
+  min-width: 70px !important;
+  width: 70px !important;
+}
+.mat-tab-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+#logout .mat-tab-header-pagination {
+  display: none !important;
+}
+
+/*.mat-tab-header-pagination {*/
+/*  visibility: hidden !important;*/
+/*}*/

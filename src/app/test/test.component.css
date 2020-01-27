@@ -1,0 +1,13 @@
+a{
+  /*background-color: #dddddd;*/
+}
+
+a:active{
+  color: #673ab7 !important;
+  /*background-color: #673ab7 !important;*/
+}
+
+a:hover {
+  /*color: #673ab7 !important;*/
+  /*background-color: #ffffff !important;*/
+}

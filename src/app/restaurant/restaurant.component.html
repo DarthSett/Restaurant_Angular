@@ -1,0 +1,65 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Menu
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <table mat-table #table  class="table mat-elevation-z8" [dataSource]="rest.Menu">
+    <ng-container matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef >
+        <mat-checkbox (change)="$event ? masterToggle() : null"
+                      [checked]="selection.hasValue() && isAllSelected()"
+                      [indeterminate]="selection.hasValue() && !isAllSelected()"
+                      [aria-label]="checkboxLabel()">
+        </mat-checkbox>
+      </th>
+      <td mat-cell *matCellDef="let product">
+        <mat-checkbox (click)="$event.stopPropagation()"
+                      (change)="$event ? selection.toggle(product) : null"
+                      [checked]="selection.isSelected(product)"
+                      [aria-label]="checkboxLabel(product)">
+        </mat-checkbox>
+      </td>
+    </ng-container>
+    <ng-container class="col" matColumnDef="Id">
+      <th mat-header-cell *matHeaderCellDef> Id </th>
+      <td mat-cell *matCellDef="let product"> {{rest.Menu.indexOf(product)+1}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Name" class="col">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let product"> {{product.Name}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Price" class="col">
+      <th mat-header-cell *matHeaderCellDef> Price </th>
+      <td mat-cell *matCellDef="let product"> {{product.Price}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Edit" class="col">
+      <th mat-header-cell *matHeaderCellDef> </th>
+      <td mat-cell *matCellDef="let product" class="edit-col"> <button mat-icon-button><mat-icon matTooltip="Edit {{product.Name}}" (click)="openEditFoodDialog(product);selection.toggle(product)">edit</mat-icon></button>  </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+        (click)="selection.toggle(row)">
+    </tr>
+  </table>
+  <p></p>
+  <button mat-raised-button color="primary" *ngIf="(rank == 1 && ID == rest.AddedBy && rest.AdderRole == 1) || (rank==0 && Email == rest.Owner) ||(rank == 2)" (click)="openAddFoodDialog()">Add</button>
+  <button mat-raised-button color="warn" *ngIf="(rank == 1 && ID == rest.AddedBy && rest.AdderRole == 1) || (rank==0 && Email == rest.Owner) ||(rank == 2)" (click) ="delFood()"  >Delete</button>
+</mat-expansion-panel>
+
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Restaurant Details
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <div class="rest-details">
+    <p>Id: {{rest.ID}}</p>
+    <p>Name: {{rest.Name}}</p>
+    <p>Tables: {{rest.Tables}}</p>
+    <p *ngIf="rank != 3">Owner: {{rest.Owner}}</p>
+    <p *ngIf="rank != 3">Adder: {{rest.AddedBy}} (Role: {{rest.AdderRole}})</p>
+    <button mat-raised-button color="primary" *ngIf="(rank == 1 && ID == rest.AddedBy && rest.AdderRole == 1) || (rank == 2)" (click)="openEditRestDialog()">Update</button>
+    <button mat-raised-button color="warn" *ngIf="(rank == 1 && ID == rest.AddedBy && rest.AdderRole == 1) ||(rank == 2)" (click) ="delRest(this.rid)"  >Delete</button>
+  </div>
+</mat-expansion-panel>

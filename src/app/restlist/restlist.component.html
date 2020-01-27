@@ -1,0 +1,27 @@
+<!--<div class="restlist-container">-->
+<!--  <mat-grid-list cols="2" rowHeight="100px">-->
+<!--    <mat-grid-tile>-->
+<!--      -->
+<!--    </mat-grid-tile>-->
+<!--    <mat-grid-tile *ngFor="let restaurant of restaurants" class="example-list-item">-->
+<!--      -->
+<!--    </mat-grid-tile>-->
+<!--</mat-grid-list>-->
+<!--</div>-->
+
+<!--<mat-divider></mat-divider>-->
+
+<div class="restlist-container">
+  <mat-card class="card" *ngFor="let restaurant of restaurants" (click)="getrest(restaurant.ID.toString())">
+    <mat-card-title-group class="title-group">
+      <img mat-card-avatar class="example-header-image" src="../../assets/elements-scotsdale-restaurant.png" alt="image">
+      <mat-card-subtitle>{{restaurants.indexOf(restaurant) + 1}}</mat-card-subtitle>
+      <mat-card-title>{{restaurant.Name}}</mat-card-title>
+    </mat-card-title-group>
+  </mat-card>
+</div>
+
+<button mat-fab *ngIf="(rank == 1 && ID == rest.AddedBy && rest.AdderRole == 1) ||(rank == 2)" class="new" color="primary" (click)="createrest()">
+  <mat-icon matTooltip="Add a Restaurant" >add</mat-icon>
+</button>
+

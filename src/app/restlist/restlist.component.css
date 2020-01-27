@@ -1,0 +1,34 @@
+.example-header-image {
+  background-size: cover;
+  justify-self: flex-end;
+}
+.title-group{
+  display: flex;
+  width: 100%;
+}
+.card {
+  /*background-color: #dddddd;*/
+  /*max-width: 400px;*/
+  margin: 8px;
+  display: flex;
+  align-items: stretch;
+  height: 64px;
+  width: 200px;
+}
+.new {
+  right: 20px;
+  bottom: 20px;
+  position: fixed;
+}
+
+mat-card:hover {
+  cursor: pointer;
+}
+
+.restlist-container {
+  display: inline-flex;
+  flex-flow: row wrap;
+  /*justify-content: space-between;*/
+}
+
+
